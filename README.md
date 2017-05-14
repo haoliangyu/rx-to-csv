@@ -1,5 +1,7 @@
 # rx-to-csv
 
+![build status](https://travis-ci.org/haoliangyu/rx-to-csv.svg?branch=master)
+
 [![ReactiveX](http://reactivex.io/assets/Rx_Logo_S.png)](http://reactivex.io/)
 
 [RxJS 5](http://reactivex.io/) operator to write data into a CSV file.
