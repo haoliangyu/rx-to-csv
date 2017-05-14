@@ -30,12 +30,12 @@ function toCSV(path, columns, options) {
         let csvRow = [];
 
         for (let column of columns) {
-          let value = String(values[column] || '');
+          let value = values[column] || '';
 
-          if (options.wrapText) {
+          if (typeof values[column] === 'string' && options.wrapText) {
             csvRow.push(`"${value}"`);
           } else {
-            csvRow.push(value);
+            csvRow.push(String(value));
           }
         }
 

@@ -23,7 +23,7 @@ describe('toCSV()', () => {
       { id: 1, name: 'Mike' },
       { id: 2, name: 'Tommy' }
     ];
-    let csvString = '"id","name"\n"1","Mike"\n"2","Tommy"\n';
+    let csvString = '"id","name"\n1,"Mike"\n2,"Tommy"\n';
 
     Observable.of(...data)
       .toCSV(testCSV, ['id', 'name'])
