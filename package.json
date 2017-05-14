@@ -1,0 +1,43 @@
+{
+  "name": "rx-to-csv",
+  "version": "0.1.0",
+  "description": "RxJS 5 operator to write data into a CSV file",
+  "main": "dist/rx-to-csv.js",
+  "scripts": {
+    "test": "mocha test/**/*.test.js --require babel-register",
+    "build": "babel src --out-dir dist",
+    "prepush": "npm test",
+    "prepublish": "npm test && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/haoliangyu/rx-to-csv.git"
+  },
+  "keywords": [
+    "rxjs",
+    "csv",
+    "reactive"
+  ],
+  "author": "Haoliang Yu <haholiang.yu@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/haoliangyu/rx-to-csv/issues"
+  },
+  "homepage": "https://github.com/haoliangyu/rx-to-csv#README",
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-preset-env": "^1.4.0",
+    "babel-register": "^6.24.1",
+    "chai": "^3.5.0",
+    "eslint": "^3.19.0",
+    "husky": "^0.13.3",
+    "mocha": "^3.3.0"
+  },
+  "dependencies": {
+    "lodash.defaults": "^4.2.0",
+    "rxjs": "^5.4.0"
+  }
+}
