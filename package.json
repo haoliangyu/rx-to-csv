@@ -15,8 +15,9 @@
   },
   "keywords": [
     "rxjs",
+    "read",
     "csv",
-    "reactive"
+    "operator"
   ],
   "author": "Haoliang Yu <haholiang.yu@outlook.com>",
   "license": "MIT",

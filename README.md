@@ -4,7 +4,9 @@
 
 [![ReactiveX](http://reactivex.io/assets/Rx_Logo_S.png)](http://reactivex.io/)
 
-[RxJS 5](http://reactivex.io/) operator to write data into a CSV file.
+[RxJS 5](http://reactivex.io/) operator to write data into a [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) file
+
+Work in both JavaScript and TypeScript
 
 ## Installation
 
