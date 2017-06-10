@@ -16,7 +16,7 @@ describe('toCSV()', () => {
 
   after(() => {
     cleanup();
-  })
+  });
 
   it('should generate a csv file.', (done) => {
     let data = [

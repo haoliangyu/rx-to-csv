@@ -30,7 +30,7 @@ Parameters:
   * **columns**: an array of column names
   * **options**: optional configuration for the csv creation
     * **wrapText**: a boolean value indicating whether to wrap text values with `"`. Default: `true`
-    * **delimeter**: a character to separate values. Default: `,`
+    * **delimiter**: a character to separate values. Default: `,`
 
 ## Example
 

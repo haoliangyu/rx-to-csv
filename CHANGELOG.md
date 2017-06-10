@@ -1,3 +1,6 @@
+## 0.1.4
+  * fix a typo
+
 ## 0.1.3
   * fix a bug at header delimiter
 

@@ -3,7 +3,7 @@ import { createWriteStream } from 'fs';
 import defaults from 'lodash.defaults';
 
 const defaultCSVOptions = {
-  delimeter: ',',
+  delimiter: ',',
   wrapText: 'true'
 };
 
@@ -16,9 +16,9 @@ function toCSV(path, columns, options = {}) {
     let stream = createWriteStream(path);
 
     if (options.wrapText) {
-      stream.write(columns.map((column) => `"${column}"`).join(options.delimeter));
+      stream.write(columns.map((column) => `"${column}"`).join(options.delimiter));
     } else {
-      stream.write(columns.join(options.delimeter));
+      stream.write(columns.join(options.delimiter));
     }
 
     stream.write('\n');
@@ -39,7 +39,7 @@ function toCSV(path, columns, options = {}) {
           }
         }
 
-        stream.write(csvRow.join(options.delimeter));
+        stream.write(csvRow.join(options.delimiter));
         stream.write('\n');
         subscriber.next();
       } catch(err) {
