@@ -7,7 +7,7 @@ const defaultCSVOptions = {
   wrapText: 'true'
 };
 
-function toCSV(path, columns, options) {
+function toCSV(path, columns, options = {}) {
 
   options = defaults(options, defaultCSVOptions);
 
@@ -16,12 +16,12 @@ function toCSV(path, columns, options) {
     let stream = createWriteStream(path);
 
     if (options.wrapText) {
-      stream.write(columns.map((column) => `"${column}"`).join(','));
+      stream.write(columns.map((column) => `"${column}"`).join(options.delimeter));
     } else {
-      stream.write(columns.join(','));
+      stream.write(columns.join(options.delimeter));
     }
 
-    stream.write('\n')
+    stream.write('\n');
     stream.on('finish', () => subscriber.complete());
     stream.on('error', (err) => subscriber.error(err));
 
@@ -48,7 +48,7 @@ function toCSV(path, columns, options) {
     },
     (err) => {
       stream.end();
-      subscriber.error(err)
+      subscriber.error(err);
     },
     () => {
       stream.end();
