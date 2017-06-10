@@ -1,3 +1,6 @@
+## 0.1.3
+  * fix a bug at header delimiter
+
 ## 0.1.2
   * add TypeScript type definition file
 
