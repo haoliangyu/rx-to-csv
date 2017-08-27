@@ -1,5 +1,6 @@
 import { Observable } from 'rxjs';
-import { createWriteStream } from 'fs';
+import { dirname } from 'path';
+import { createWriteStream, ensureDirSync } from 'fs-extra';
 import defaults from 'lodash.defaults';
 
 const defaultCSVOptions = {
@@ -13,6 +14,10 @@ function toCSV(path, columns, options = {}) {
 
   return Observable.create((subscriber) => {
     let source = this;
+
+    // make sure that the directory exists.
+    ensureDirSync(dirname(path));
+
     let stream = createWriteStream(path);
 
     if (options.wrapText) {

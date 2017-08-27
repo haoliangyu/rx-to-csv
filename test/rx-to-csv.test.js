@@ -6,6 +6,7 @@ import '../src/rx-to-csv';
 
 const expect = chai.expect;
 const testCSV = join(__dirname, 'write.test.csv');
+const testCSV2 = join(__dirname, 'non-exist/write.test.csv');
 const noop = () => {};
 
 describe('toCSV()', () => {
@@ -34,10 +35,30 @@ describe('toCSV()', () => {
       });
   });
 
+  it('should generate a csv file with directory not created.', (done) => {
+    let data = [
+      { id: 1, name: 'Mike' },
+      { id: 2, name: 'Tommy' }
+    ];
+    let csvString = '"id","name"\n1,"Mike"\n2,"Tommy"\n';
+
+    Observable.of(...data)
+      .toCSV(testCSV2, ['id', 'name'])
+      .subscribe(noop, noop, () => {
+        let csv = readFileSync(testCSV2, 'utf8');
+        expect(csv).to.equal(csvString);
+        done();
+      });
+  });
+
 });
 
 function cleanup() {
   if (existsSync(testCSV)) {
     unlinkSync(testCSV);
+  }
+
+  if (existsSync(testCSV2)) {
+    unlinkSync(testCSV2);
   }
 }
