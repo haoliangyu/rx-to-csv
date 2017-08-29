@@ -1,3 +1,6 @@
+## 0.1.5
+  * ensure the directory for new csv file is created (issue #1)
+
 ## 0.1.4
   * fix a typo
 
