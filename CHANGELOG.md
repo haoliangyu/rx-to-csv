@@ -1,3 +1,6 @@
+## 0.1.6
+  * add a missing dependency
+
 ## 0.1.5
   * ensure the directory for new csv file is created (issue #1)
 
