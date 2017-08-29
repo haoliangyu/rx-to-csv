@@ -51,6 +51,24 @@ describe('toCSV()', () => {
       });
   });
 
+  it('should recognize upstream errors.', (done) => {
+    let data = [
+      { id: 1, name: 'Mike' },
+      { id: 2, name: 'Tommy' }
+    ];
+
+    Observable.of(...data)
+      .mergeMap(() => Observable.throw(new Error('failed')))
+      .toCSV(testCSV2, ['id', 'name'])
+      .subscribe(
+        noop,
+        (err) => {
+          expect(err).to.be.an('error');
+          done();
+        },
+        noop
+      );
+  });
 });
 
 function cleanup() {
