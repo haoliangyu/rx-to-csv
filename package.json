@@ -1,6 +1,6 @@
 {
   "name": "rx-to-csv",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "RxJS 5 operator to write data into a CSV file",
   "main": "dist/rx-to-csv.js",
   "scripts": {
